@@ -12,8 +12,6 @@ public class DriverFactory {
     private WebDriver driver;
     public WebDriver getDriver(Browser browser){
         switch (browser){
-            case IE:
-                return setUpIE();
             case EDGE:
                 return setUpEdge();
             case CHROME:

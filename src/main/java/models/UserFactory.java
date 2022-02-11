@@ -29,7 +29,7 @@ public class UserFactory {
                 .setBirthDate(new SimpleDateFormat("MM/dd/yyyy")
                         .format(faker.date().birthday(18,100)))
                 .build();
-        return null;
+        return user;
     }
 
     private User getAlreadyRegisteredUser() {

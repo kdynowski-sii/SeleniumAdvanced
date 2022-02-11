@@ -1,8 +1,49 @@
 package models;
 
 public class User {
-    private String socialTitle, firstName, lastName, email, password, birthDate;
     private boolean offersFromPartners, dataPrivacy, newsletter, owu;
+    private String socialTitle, firstName, lastName, email, password, birthDate;
+
+
+    public String getSocialTitle() {
+        return socialTitle;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getBirthDate() {
+        return birthDate;
+    }
+
+    public boolean isOffersFromPartners() {
+        return offersFromPartners;
+    }
+
+    public boolean isDataPrivacy() {
+        return dataPrivacy;
+    }
+
+    public boolean isNewsletter() {
+        return newsletter;
+    }
+
+    public boolean isOwu() {
+        return owu;
+    }
     public static final class UserBuilder{
         private String firstName;
         private String lastName;

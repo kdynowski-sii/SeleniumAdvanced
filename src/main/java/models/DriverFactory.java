@@ -1,3 +1,5 @@
+package models;
+
 import enums.Browser;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

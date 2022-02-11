@@ -1,4 +1,4 @@
-package pages;
+package pages.shopping;
 
 import base.BasePage;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +12,7 @@ public class ProductAddedPopPupPage extends BasePage {
     private WebElement countOfProducts;
     @FindBy(css = "button.btn-secondary")
     private WebElement continueShoppingButton;
-    private WebDriverWait wait;
+    private final WebDriverWait wait;
 
     public ProductAddedPopPupPage(WebDriver driver, WebDriverWait wait) {
         super(driver);

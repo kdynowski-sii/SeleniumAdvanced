@@ -1,4 +1,4 @@
-package pages;
+package pages.authentication;
 
 import base.BasePage;
 import org.openqa.selenium.WebDriver;
@@ -62,8 +62,7 @@ public class CreateAccountPage extends BasePage {
         return this;
     }
 
-    public CreateAccountPage clickSaveButton() {
+    public void clickSaveButton() {
         saveButton.click();
-        return this;
     }
 }

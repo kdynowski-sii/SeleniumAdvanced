@@ -4,17 +4,17 @@ import Base.TestBase;
 import models.User;
 import models.UserFactory;
 import org.testng.annotations.Test;
-import pages.AuthenticationPage;
-import pages.CreateAccountPage;
-import pages.HeaderSignedPage;
-import pages.HeaderUnsignedPage;
+import pages.authentication.AuthenticationPage;
+import pages.authentication.CreateAccountPage;
+import pages.common.HeaderSignedPage;
+import pages.common.HeaderUnsignedPage;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class LoginSuccessTest extends TestBase {
     @Test
     public void loginWithExistingUser(){
-        driver.get("http://146.59.32.4/index.php"); //TODO get from file
+        driver.get(testConfig.getUrl());
         new HeaderUnsignedPage(driver).clickSignIn();
 
         User existingUser = new UserFactory().getUser(true);
@@ -30,7 +30,7 @@ public class LoginSuccessTest extends TestBase {
 
     @Test
     public void UserRegistration(){
-        driver.get("http://146.59.32.4/index.php"); //TODO get from file
+        driver.get(testConfig.getUrl());
         new HeaderUnsignedPage(driver).clickSignIn();
 
         User newUser = new UserFactory().getUser(false);

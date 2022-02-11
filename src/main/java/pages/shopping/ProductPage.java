@@ -1,4 +1,4 @@
-package pages;
+package pages.shopping;
 
 import base.BasePage;
 import org.openqa.selenium.WebDriver;
@@ -28,9 +28,8 @@ public class ProductPage extends BasePage {
         return this;
     }
 
-    public ProductPage addToBasket(){
+    public void addToBasket(){
         addToCartButton.click();
-        return this;
     }
 
     public double getPrice(){

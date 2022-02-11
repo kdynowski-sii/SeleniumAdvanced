@@ -44,6 +44,7 @@ public class Product {
 
     public void increaseQuantity(Product product) {
         this.quantity += product.getQuantity();
+        this.totalCost = quantity * price;
     }
 
     public String toString(){

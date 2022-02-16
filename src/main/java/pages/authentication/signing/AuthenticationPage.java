@@ -1,4 +1,4 @@
-package pages.authentication;
+package pages.authentication.signing;
 
 import base.BasePage;
 import org.openqa.selenium.WebDriver;

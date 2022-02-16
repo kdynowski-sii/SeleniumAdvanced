@@ -1,9 +1,24 @@
 package models;
 
+
+import enums.PolUsa;
+
 public class User {
     private boolean offersFromPartners, dataPrivacy, newsletter, owu;
-    private String socialTitle, firstName, lastName, email, password, birthDate;
+    private String socialTitle, firstName, lastName, email, password, birthDate, address, city, zipCode;
+    private PolUsa country; //stores country values - ie. 14 for poland and 21 for usa
 
+    public String getAddress() {
+        return address;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
 
     public String getSocialTitle() {
         return socialTitle;
@@ -44,6 +59,11 @@ public class User {
     public boolean isOwu() {
         return owu;
     }
+
+    public PolUsa getCountry() {
+        return country;
+    }
+
     public static final class UserBuilder{
         private String firstName;
         private String lastName;
@@ -52,7 +72,29 @@ public class User {
         private String birthDate;
         private boolean offersFromPartners, dataPrivacy, newsletter, owu;
         private String socialTitle;
+        private String address = "TestAddress", city = "TestCity", zipCode = "88-123";
+        private PolUsa country = PolUsa.POLAND;
 
+
+        public UserBuilder setAddress(String address) {
+            this.address = address;
+            return this;
+        }
+
+        public UserBuilder setCity(String city) {
+            this.city = city;
+            return this;
+        }
+
+        public UserBuilder setZipCode(String zipCode) {
+            this.zipCode = zipCode;
+            return this;
+        }
+
+        public UserBuilder setCountry(PolUsa country) {
+            this.country = country;
+            return this;
+        }
 
         public UserBuilder setSocialTitle(String socialTitle) {
             this.socialTitle = socialTitle;
@@ -116,6 +158,10 @@ public class User {
             user.dataPrivacy = this.dataPrivacy;
             user.newsletter = this.newsletter;
             user.owu = this.owu;
+            user.address = this.address;
+            user.city = this.city;
+            user.zipCode = this.zipCode;
+            user.country = this.country;
             return user;
         }
     }

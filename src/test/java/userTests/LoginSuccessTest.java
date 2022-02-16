@@ -4,8 +4,8 @@ import Base.TestBase;
 import models.User;
 import models.UserFactory;
 import org.testng.annotations.Test;
-import pages.authentication.AuthenticationPage;
-import pages.authentication.CreateAccountPage;
+import pages.authentication.signing.AuthenticationPage;
+import pages.authentication.signing.CreateAccountPage;
 import pages.common.HeaderSignedPage;
 import pages.common.HeaderUnsignedPage;
 

@@ -13,6 +13,9 @@ public class ShoppingCartPage extends BasePage {
     @FindBy(css = "li.cart-item")
     private List<WebElement> cartItems;
 
+    @FindBy(css = "a.btn.btn-primary")
+    private WebElement proceedButton;
+
     public List<Product> getProductsInBasket() {
         return productsInBasket;
     }
@@ -25,5 +28,9 @@ public class ShoppingCartPage extends BasePage {
         for (WebElement cartItem: cartItems) {
             productsInBasket.add(new ProductBasketPage(driver, cartItem).getProduct());
         }
+    }
+
+    public void proceed(){
+        proceedButton.click();
     }
 }

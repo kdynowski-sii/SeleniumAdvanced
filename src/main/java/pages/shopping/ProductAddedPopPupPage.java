@@ -12,6 +12,8 @@ public class ProductAddedPopPupPage extends BasePage {
     private WebElement countOfProducts;
     @FindBy(css = "button.btn-secondary")
     private WebElement continueShoppingButton;
+    @FindBy(css = "a.btn.btn-primary")
+    private WebElement proceedButton;
     private final WebDriverWait wait;
 
     public ProductAddedPopPupPage(WebDriver driver, WebDriverWait wait) {
@@ -26,5 +28,10 @@ public class ProductAddedPopPupPage extends BasePage {
 
     public void continueShopping(){
         continueShoppingButton.click();
+    }
+
+    public void goToCheckout() {
+        wait.until(ExpectedConditions.elementToBeClickable(proceedButton));
+        proceedButton.click();
     }
 }

@@ -9,6 +9,7 @@ import models.User;
 import models.UserFactory;
 import org.testng.annotations.Test;
 import pages.authentication.checkout.CheckoutForm;
+import pages.authentication.checkout.ConfirmationPage;
 import pages.common.HeaderUnsignedPage;
 import pages.shopping.ProductAddedPopPupPage;
 import pages.shopping.ProductPage;
@@ -87,6 +88,8 @@ public class ShoppingCategoriesTest extends TestBase {
         CheckoutForm form = new CheckoutForm(driver, user);
         form.fillForm();
         Screenshots.takeScreenshot(driver, "FilledForm!");
+        String output = new ConfirmationPage(driver).getValidationMessage();
+        assertThat(output).containsIgnoringCase("order is confirmed");
         // TODO assert if products are correct
     }
 }

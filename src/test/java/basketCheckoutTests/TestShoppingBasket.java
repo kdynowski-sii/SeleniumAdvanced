@@ -32,8 +32,8 @@ public class TestShoppingBasket extends TestBase {
             cumulativeQuantity += quantity;
             totalCost = price * quantity;
             Product product = new Product().setName(name)
-                    .setPrice(price)
-                    .setTotalCost(totalCost)
+                    .setPrice(String.valueOf(price))
+                    .setTotalCost(String.valueOf(totalCost))
                     .setQuantity(quantity);
             if (list.productAlreadyIn(product)) {
                 list.increaseQuantity(product);

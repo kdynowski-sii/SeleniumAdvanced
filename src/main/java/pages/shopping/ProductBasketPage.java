@@ -23,8 +23,8 @@ public class ProductBasketPage extends BasePage {
                 .setTotalCost(getTotalCost());
     }
 
-    private double getTotalCost() {
-        return Double.parseDouble(cartItem.findElement(By.cssSelector("span.product-price strong")).getText().substring(1));
+    private String getTotalCost() {
+        return cartItem.findElement(By.cssSelector("span.product-price strong")).getText().substring(1);
     }
 
     private int getQuantity() {
@@ -32,12 +32,11 @@ public class ProductBasketPage extends BasePage {
                 cartItem.findElement(By.cssSelector("div.product-line-grid input")).getAttribute("value"));
     }
 
-    private double getPrice() {
-        return Double.parseDouble(
-                cartItem.findElement(
+    private String getPrice() {
+        return cartItem.findElement(
                         By.cssSelector("div.product-line-grid span.price"))
                         .getText()
-                        .substring(1));
+                        .substring(1);
     }
 
     private String getName() {

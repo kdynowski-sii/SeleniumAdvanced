@@ -1,20 +1,22 @@
 package models;
 
+import java.math.BigDecimal;
+
 public class Product {
     private int quantity;
     private String name;
-    private double price, totalCost;
+    private BigDecimal price, totalCost;
 
 
     public String getName() {
         return name;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public double getTotalCost() {
+    public BigDecimal getTotalCost() {
         return totalCost;
     }
 
@@ -27,13 +29,13 @@ public class Product {
         return this;
     }
 
-    public Product setPrice(double price) {
-        this.price = price;
+    public Product setPrice(String price) {
+        this.price = new BigDecimal(price);
         return this;
     }
 
-    public Product setTotalCost(double totalCost) {
-        this.totalCost = totalCost;
+    public Product setTotalCost(String totalCost) {
+        this.totalCost = new BigDecimal(totalCost);
         return this;
     }
 
@@ -44,10 +46,10 @@ public class Product {
 
     public void increaseQuantity(Product product) {
         this.quantity += product.getQuantity();
-        this.totalCost = quantity * price;
+        this.totalCost = price.multiply(BigDecimal.valueOf(quantity));
     }
 
     public String toString(){
-        return name + ": " + quantity + " x " + price + " = " + totalCost;
+        return String.format("%s: %d x %.2f = %.2f", name, quantity, price, totalCost);
     }
 }

@@ -64,8 +64,8 @@ public class ShoppingCategoriesTest extends TestBase {
         price = productPage.getPrice();
         quantity = new Random().nextInt(5) + 1;
         product.setName(productPage.getName())
-                .setPrice(price)
-                .setTotalCost(price * quantity)
+                .setPrice(String.valueOf(price))
+                .setTotalCost(String.valueOf(price * quantity))
                 .setQuantity(quantity);
 
         productPage.setQuantity(quantity)

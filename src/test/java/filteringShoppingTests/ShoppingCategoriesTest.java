@@ -3,6 +3,7 @@ package filteringShoppingTests;
 import Base.TestBase;
 import enums.Categories;
 import enums.Subcategory;
+import helpers.Screenshots;
 import models.Product;
 import models.User;
 import models.UserFactory;
@@ -85,26 +86,7 @@ public class ShoppingCategoriesTest extends TestBase {
         User user = new UserFactory().getUser(false);
         CheckoutForm form = new CheckoutForm(driver, user);
         form.fillForm();
-        // Assert!
-        // TODO
-        //  owu
-        //  continue
-        //  AddressPage
-        //  Fill first name
-        //  Fill last name
-        //  fill address
-        //  Fill city
-        //  Fill zip code
-        //  select country
-        //  Check if use address for invoice is checked
-        //  continu
-        //  ShippingPage
-        //  Shipping method tester sii
-        //  Continue
-        //  Pay by check
-        //  agree to the terms of service
-        //  Place order
-        //  Assert order is confirmed
-        //  Assert if info is correct
+        Screenshots.takeScreenshot(driver, "FilledForm!");
+        // TODO assert if products are correct
     }
 }

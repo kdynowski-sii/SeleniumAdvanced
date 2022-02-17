@@ -22,12 +22,16 @@ public class CheckoutForm extends BasePage {
                 .checkOwu()
                 .clickContinue();
         new AddressPage(driver)
+                .fillFirstname(user.getFirstName())
+                .fillLastname(user.getLastName())
                 .fillAddress(user.getAddress())
                 .fillCity(user.getCity())
                 .fillZipCode(user.getZipCode())
                 .selectCountry(user.getCountry())
                 .clickContinue();
-        new ShippingMethodPage(driver).clickContinue();
+        new ShippingMethodPage(driver)
+                .chooseTesterSiiShippingMethod()
+                .clickContinue();
         new PaymentPage(driver)
                 .selectPayByCheck()
                 .agreeToTerms()
